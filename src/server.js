@@ -27,9 +27,9 @@ const server = createServer(async (req, res) => {
         req.params = params;
         req.query = query ? extractQueryParams(query) : {};
 
-        if (route.middlewares.length > 0) {
-            const next = route.middlewares.reduce((_, m) => {
-                return m(req, res);
+        if (route.validates.length > 0) {
+            const next = route.validates.reduce((_, v) => {
+                return v(req, res);
             }, true);
 
             if (!next) {

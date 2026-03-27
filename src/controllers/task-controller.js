@@ -33,28 +33,25 @@ export class TaskController {
 
         const task = new Task();
 
-        let findTask = task.find(id);
-
-        if (!findTask) {
-            return res
-                .writeHead(404)
-                .end(JSON.stringify({
-                    message: 'Task not found',
-                    request: {
-                        id,
-                    },
-                }))
-        }
-
-        findTask = task.update(id, {
-            title,
-            description,
-        });
-
         return res
             .end(JSON.stringify({
                 message: 'Task updated',
-                data: findTask,
+                data: task.update(id, {
+                    title,
+                    description,
+                }),
             }));
+    }
+
+    static delete(req, res) {
+        const { id } = req.params;
+
+        const task = new Task();
+
+        task.delete(id);
+
+        return res
+            .writeHead(204)
+            .end();
     }
 }

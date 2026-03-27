@@ -42,4 +42,8 @@ export class Task {
 
         return this.find(id);
     }
+
+    delete(id) {
+        database.delete(this.#TABLE, id);
+    }
 }
