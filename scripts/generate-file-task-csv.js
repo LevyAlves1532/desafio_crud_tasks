@@ -2,7 +2,7 @@ import fs from 'node:fs/promises';
 
 let body = `title,description\n`;
 
-for (let x = 1;x<=5;x++) {
+for (let x = 1;x<=100;x++) {
     body += `Task ${x},Description Task ${x}\n`;
 }
 
