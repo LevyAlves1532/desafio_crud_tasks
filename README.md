@@ -46,8 +46,8 @@ Certifique-se de ter o **Node.js 20.x** ou superior instalado.
 
 1. **Clone o repositório:**
    ```bash
-   git clone https://github.com/seu-usuario/node-aulas.git
-   cd node-aulas/desafio_crud_tarefas
+   git clone https://github.com/LevyAlves1532/desafio_crud_tasks.git
+   cd desafio_crud_tasks
    ```
 
 2. **Instale as dependências:**
