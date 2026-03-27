@@ -1,7 +1,7 @@
 # 🚀 Desafio CRUD de Tarefas com Node.js
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/nodejs/node/main/doc/api_assets/logo.svg" width="150" alt="Node.js Logo">
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg" width="150" alt="Node.js Logo">
 </p>
 
 <p align="center">
