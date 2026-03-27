@@ -54,4 +54,22 @@ export class TaskController {
             .writeHead(204)
             .end();
     }
+
+    static complete(req, res) {
+        const { id } = req.params;
+
+        const task = new Task();
+
+        const findTask = task.find(id);
+
+        return res
+            .end(JSON.stringify({
+                message: 'Task completed',
+                data: task.update(id, { 
+                    completed_at: !findTask.completed_at 
+                        ? new Date().toDateString() 
+                        : null 
+                }),
+            }));
+    }
 }

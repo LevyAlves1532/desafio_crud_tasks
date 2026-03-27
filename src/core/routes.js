@@ -40,5 +40,13 @@ export const routes = [
         validates: [
             taskParamsValidate,
         ],
+    },
+    {
+        method: 'PATCH',
+        path: '/tasks/:id/complete',
+        handler: TaskController.complete,
+        validates: [
+            taskParamsValidate,
+        ],
     }
 ];
