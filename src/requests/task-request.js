@@ -1,4 +1,4 @@
-export function storeTaskRequest(req, res) {
+export function taskRequest(req, res) {
     const title = req.body?.title || '';
     const description = req.body?.description || '';
 

@@ -1,6 +1,6 @@
 import { HomeController } from "../controllers/home-controller.js";
 import { TaskController } from "../controllers/task-controller.js";
-import { storeTaskRequest } from "../requests/store-task-request.js";
+import { taskRequest } from "../requests/task-request.js";
 
 export const routes = [
     {
@@ -20,7 +20,15 @@ export const routes = [
         path: '/tasks',
         handler: TaskController.store,
         middlewares: [
-            storeTaskRequest,
+            taskRequest,
+        ],
+    },
+    {
+        method: 'PUT',
+        path: '/tasks/:id',
+        handler: TaskController.update,
+        middlewares: [
+            taskRequest,
         ],
     }
 ];

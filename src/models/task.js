@@ -16,6 +16,13 @@ export class Task {
         });
     }
 
+    find(id) {
+        const task = database.select(this.#TABLE, tasks => 
+            tasks.find(task => task.id === id));
+        
+        return task;
+    }
+
     create(task) {
         const newTask = { ...task };
 
@@ -25,5 +32,14 @@ export class Task {
         newTask.updated_at = new Date().toDateString();     
 
         return database.insert(this.#TABLE, newTask);
+    }
+
+    update(id, task) {
+        database.update(this.#TABLE, id, {
+            ...task,
+            updated_at: new Date().toDateString(),
+        });
+
+        return this.find(id);
     }
 }
