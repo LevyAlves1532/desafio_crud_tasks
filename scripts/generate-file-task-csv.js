@@ -2,7 +2,7 @@ import fs from 'node:fs/promises';
 
 let body = `title,description\n`;
 
-for (let x = 1;x<=100000;x++) {
+for (let x = 1;x<=5;x++) {
     body += `Task ${x},Description Task ${x}\n`;
 }
 
@@ -22,7 +22,7 @@ function validFolderOrCreate() {
 }
 
 function createFileCSV() {
-    fs.writeFile(csvPath, body)
+    fs.writeFile(csvPath, body, 'utf8')
         .then(() => {
             console.info('Created file csv');
         })

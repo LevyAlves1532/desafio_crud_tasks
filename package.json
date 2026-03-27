@@ -4,10 +4,15 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "node --watch ./src/server.js"
+    "dev": "node --watch ./src/server.js",
+    "generate:csv": "node ./scripts/generate-file-task-csv.js",
+    "import:csv": "node ./scripts/import-task-csv.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "csv-parser": "^3.2.0"
+  }
 }
